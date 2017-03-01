@@ -1,0 +1,14 @@
+{
+  "name": "rr-async-routes",
+  "version": "0.0.1",
+  "description": "This will be released shortly, please leave me any feedback on twitter!",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zach Silveira",
+  "license": "ISC"
+}
