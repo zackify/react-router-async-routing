@@ -21,9 +21,8 @@ class Async extends React.Component {
   }
 
   async load({ dataPath, loader }) {
-    let { component, text } = await loader({
-      isDataPath: true,
-      path: dataPath,
+    let { component } = await loader({
+      dataPath,
     });
 
     if (!component) return;

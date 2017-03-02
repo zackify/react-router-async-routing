@@ -3,8 +3,12 @@ import LinkBuilder from '../src/link'
 import RouteBuilder from '../src/route'
 import PreloadBuilder from '../src/preload'
 
-export default (routes, importer) => ({
-  Link: LinkBuilder(loader(importer, routes)),
-  Route: RouteBuilder(loader(importer, routes)),
-  Preload: PreloadBuilder(loader(importer, routes))
-})
+export default (routes, importer) => {
+  let Loader = loader(importer, routes)
+  
+  return {
+    Link: LinkBuilder(Loader),
+    Route: RouteBuilder(Loader),
+    Preload: PreloadBuilder(Loader)
+  }
+}
