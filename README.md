@@ -7,7 +7,7 @@ React router v4 is awesome, but one thing is missing! Async routes. There's a co
 ##Install
 
 ```
-npm install rr-async-routes
+npm install react-router-async-routing
 ```
 
 ##Setup
@@ -31,7 +31,7 @@ Create a `routing` file that will export `Preload`, `Link`, and `Route` componen
 
 ```js
 import routes from './routes'
-import AsyncSetup from 'rr-async-routes'
+import AsyncSetup from 'react-router-async-routing'
 
 export AsyncSetup(routes, path => import(`../views/${page}.js`))
 
@@ -72,7 +72,7 @@ The route will be loaded in the background :)
 If you need to do more than just async load a route, you can make your own loader by importing components directly:
 
 ```js
-import LinkBuilder from 'rr-async-routes/link'
+import LinkBuilder from 'react-router-async-routing/link'
 
 const CustomLink = LinkBuilder(
   async ({ path }) => await somePromise()
@@ -80,4 +80,4 @@ const CustomLink = LinkBuilder(
 
 ```
 
-The function passed will be `await`ed on any time a link is clicked. 
+The function passed will be `await`ed on any time a link is clicked.

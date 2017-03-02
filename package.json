@@ -1,14 +1,21 @@
 {
-  "name": "rr-async-routes",
+  "name": "react-router-async-routing",
   "version": "0.0.1",
   "description": "This will be released shortly, please leave me any feedback on twitter!",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
+    "build": "babel src --out-dir dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Zach Silveira",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-preset-react": "^6.23.0"
+  }
 }

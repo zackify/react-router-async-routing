@@ -10,7 +10,7 @@ const pathFinder = memoize(
 )
 
 
-export default (importer, routes) => ({ path, dataPath }) {
+export default (importer, routes) => async ({ path, dataPath }) => {
   let componentPath = dataPath || pathFinder(path, routes)
 
   //without this hot loading in development wouldn't work
