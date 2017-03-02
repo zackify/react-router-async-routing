@@ -21,9 +21,7 @@ class Async extends React.Component {
   }
 
   async load({ dataPath, loader }) {
-    let { component } = await loader({
-      dataPath,
-    });
+    let { component } = await loader({ dataPath });
 
     if (!component) return;
 
@@ -34,8 +32,8 @@ class Async extends React.Component {
   }
 
   render() {
-    let { component, text } = this.state;
-    if (!component || !text) return null;
+    let { component } = this.state;
+    if (!component) return null;
     return React.createElement(component, { ...this.props, text });
   }
 }
