@@ -1,5 +1,4 @@
 import { Route } from 'react-router-dom';
-
 class Async extends React.Component {
   constructor({ dataPath }) {
     super();
@@ -22,27 +21,19 @@ class Async extends React.Component {
 
   async load({ dataPath, loader }) {
     let { component } = await loader({ dataPath });
-
     if (!component) return;
 
     this.setState({
-      component: component.default,
-      text: text.default,
+      component: component.default
     });
   }
 
   render() {
     let { component } = this.state;
+
     if (!component) return null;
-    return React.createElement(component, { ...this.props, text });
+    return React.createElement(component, { ...this.props });
   }
 }
 
-
-export default loader => props => (
-  <Route
-    {...props}
-    loader={loader}
-    component={Async}
-  />
-);
+export default loader => props => <Route {...props} loader={loader} component={Async} />;

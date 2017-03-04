@@ -1,17 +1,14 @@
-import memoize from './memoize'
-import { matchPath } from 'react-router'
+import memoize from './memoize';
+import { matchPath } from 'react-router';
 
-const pathFinder = memoize(
-  (path, routes) => {
-    let route = routes.find(route => matchPath(path, route.path))
-    if (route) return route.dataPath
-    return path
-  }
-)
-
+const pathFinder = memoize((path, routes) => {
+  let route = routes.find(route => matchPath(path, route.path));
+  if (route) return route.dataPath;
+  return path;
+});
 
 export default (importer, routes) => async ({ path, dataPath }) => {
-  let componentPath = dataPath || pathFinder(path, routes)
+  let componentPath = dataPath || pathFinder(path, routes);
 
   //without this hot loading in development wouldn't work
   if (window.components[componentPath] && process.env.NODE_ENV === 'production') return {};
@@ -21,13 +18,13 @@ export default (importer, routes) => async ({ path, dataPath }) => {
 
     if (component) {
       window.components[componentPath] = {
-        component: component.default,
+        component: component.default
       };
     }
 
     return { component };
   } catch (e) {
-    console.warn(`async route: ${dataPath} does not exist`);
+    console.warn(`async route: ${dataPath || path} does not exist`);
     return {};
   }
-}
+};

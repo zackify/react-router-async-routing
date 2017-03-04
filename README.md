@@ -1,4 +1,3 @@
-This will be released shortly, please leave me any feedback on twitter!
 
 ##Async Routing
 
@@ -30,10 +29,12 @@ export default [
 Create a `router` file that will export `Preload`, `Link`, and `Route` components for you to use in place of the built in components in v4:
 
 ```js
-import routes from './routes'
+import routes from './routes';
 import AsyncSetup from 'react-router-async-routing'
 
-export AsyncSetup(routes, path => import(`../views/${page}.js`))
+const { Route, Link, Preload } = AsyncSetup(routes, path => import(`./views/${path}.js`));
+
+export { Link, Route, Preload };
 
 ```
 

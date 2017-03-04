@@ -1,9 +1,15 @@
 {
-  "presets": [
-    "react",
-    "latest"
-  ],
-  "plugins": [
-    "transform-object-rest-spread",
-  ]
+  "env": {
+    "development": {
+      "presets": [
+        ["es2015", {"loose": true, "modules": false}],
+        "react"
+      ],
+      "plugins": [
+        "react-hot-loader/babel",
+        "transform-object-rest-spread",
+        "syntax-dynamic-import"
+      ]
+    }
+  }
 }
