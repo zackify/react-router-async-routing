@@ -27,7 +27,7 @@ export default [
 ]
 ```
 
-Create a `routing` file that will export `Preload`, `Link`, and `Route` components for you to use in place of the built in components in v4:
+Create a `router` file that will export `Preload`, `Link`, and `Route` components for you to use in place of the built in components in v4:
 
 ```js
 import routes from './routes'
@@ -42,14 +42,14 @@ The first argument is your routes array, the second is a function that takes a p
 Now, render your routes using the components from the file you just created!
 
 ```
-import { Route } from './routing'
+import { Route } from './router'
 
 ....
 {routes.map(route => <Route key={route.path} {...route} />)}
 
 ```
 
-Now, you can link to any page like you're used to, just `import { Link } from './routing'`!
+Now, you can link to any page like you're used to, just `import { Link } from './router'`!
 
 ##Preloading routes
 
