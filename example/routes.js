@@ -1,6 +1,7 @@
 export default [
   {
     path: '/',
+    exact: true,
     dataPath: 'index'
   },
   {
@@ -10,5 +11,9 @@ export default [
   {
     path: '/about/:name',
     dataPath: 'about'
+  },
+  {
+    path: '/preloaded',
+    dataPath: 'preloaded-content'
   }
 ];

@@ -2,7 +2,7 @@ import memoize from './memoize';
 import { matchPath } from 'react-router';
 
 const pathFinder = memoize((path, routes) => {
-  let route = routes.find(route => matchPath(path, route.path));
+  let route = routes.find(route => matchPath(path, { path: route.path, exact: true }));
   if (route) return route.dataPath;
   return path;
 });

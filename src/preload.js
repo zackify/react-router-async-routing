@@ -6,4 +6,4 @@ export default loader => class Preload extends React.Component {
   render() {
     return null;
   }
-}
+};

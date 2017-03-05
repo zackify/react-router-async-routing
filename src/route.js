@@ -19,7 +19,7 @@ class Async extends React.Component {
     if (this.props !== props) this.load(props);
   }
 
-  async load({ dataPath, loader }) {
+  async load({ dataPath, loader, ...props }) {
     let { component } = await loader({ dataPath });
     if (!component) return;
 
