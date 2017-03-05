@@ -3,6 +3,8 @@
 
 React router v4 is awesome, but one thing is missing! Async routes. There's a couple components out there but they all have the same problem, on route change, the component will return null, then load the page. This makes for an annoying user experience. This package will wait for the bundle before a route change, and also allow you to preload pages!
 
+You must be using webpack 2 along with [syntax-dynamic-import](https://webpack.js.org/guides/code-splitting-import/#usage-with-babel) to use this package!
+
 ##Install
 
 ```
@@ -42,7 +44,7 @@ The first argument is your routes array, the second is a function that takes a p
 
 Now, render your routes using the components from the file you just created!
 
-```
+```js
 import { Route } from './router'
 
 ....
@@ -56,7 +58,7 @@ Now, you can link to any page like you're used to, just `import { Link } from '.
 
 If a user is on the homepage, and you'd like to load the about page ahead of time, just render this inside of your homepage:
 
-```
+```js
 export const Home = (
   <div>
     <h2>Home</h2>
