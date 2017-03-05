@@ -4,11 +4,11 @@ export default loader => {
   class AsyncLink extends React.Component {
     async loadBeforeNavigate() {
       let { to } = this.props;
-      let { router } = this.context;
+      let { history } = this.context;
       await loader({ path: to });
 
       window.scrollTo(0, 0);
-      return router.push(to);
+      return history.push(to);
     }
 
     render() {
@@ -25,7 +25,7 @@ export default loader => {
     }
   }
   AsyncLink.contextTypes = {
-    router: React.PropTypes.object
+    history: React.PropTypes.object
   };
 
   return AsyncLink;

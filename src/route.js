@@ -36,4 +36,10 @@ class Async extends React.Component {
   }
 }
 
-export default loader => props => <Route {...props} loader={loader} component={Async} />;
+export default loader =>
+  props => (
+    <Route
+      {...props}
+      render={routeProps => <Async loader={loader} dataPath={props.dataPath} {...routeProps} />}
+    />
+  );

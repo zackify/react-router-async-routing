@@ -9,13 +9,11 @@ const pathFinder = memoize((path, routes) => {
 
 export default (importer, routes) => async ({ path, dataPath }) => {
   let componentPath = dataPath || pathFinder(path, routes);
-
   //without this hot loading in development wouldn't work
   if (window.components[componentPath] && process.env.NODE_ENV === 'production') return {};
 
   try {
     const component = await importer(componentPath);
-
     if (component) {
       window.components[componentPath] = {
         component: component.default
