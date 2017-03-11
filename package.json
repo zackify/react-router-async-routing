@@ -1,6 +1,6 @@
 {
   "name": "react-router-async-routing",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "This will be released shortly, please leave me any feedback on twitter!",
   "main": "dist/index.js",
   "directories": {
@@ -18,6 +18,10 @@
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0"
   },
+  "peerDependencies": {
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0"
+  },
   "devDependencies": {
     "babel-loader": "6.3.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
@@ -25,8 +29,8 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-hot-loader": "3.0.0-beta.6",
-    "react-router": "4.0.0-beta.8",
-    "react-router-dom": "4.0.0-beta.8",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }

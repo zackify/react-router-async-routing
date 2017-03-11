@@ -56,6 +56,8 @@ Now, you can link to any page like you're used to, just `import { Link } from '.
 
 ##Preloading routes
 
+Note: If you use a serice worker, this isn't really needed. Except on older browsers.
+
 If a user is on the homepage, and you'd like to load the about page ahead of time, just render this inside of your homepage:
 
 ```js
