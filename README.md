@@ -1,6 +1,10 @@
 
 ##Async Routing
 
+TODO:
+- server render
+- make route config optional
+
 React router v4 is awesome, but one thing is missing! Async routes. There's a couple components out there but they all have the same problem, on route change, the component will return null, then load the page. This makes for an annoying user experience. This package will wait for the bundle before a route change, and also allow you to preload pages!
 
 You must be using webpack 2 along with [syntax-dynamic-import](https://webpack.js.org/guides/code-splitting-import/#usage-with-babel) to use this package!
