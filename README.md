@@ -1,5 +1,5 @@
 
-##Async Routing
+## Async Routing
 
 TODO:
 - server render
@@ -9,13 +9,13 @@ React router v4 is awesome, but one thing is missing! Async routes. There's a co
 
 You must be using webpack 2 along with [syntax-dynamic-import](https://webpack.js.org/guides/code-splitting-import/#usage-with-babel) to use this package!
 
-##Install
+## Install
 
 ```
 npm install react-router-async-routing
 ```
 
-##Setup
+## Setup
 
 Create a routes file, with the pathname and path to your component files
 
@@ -58,7 +58,7 @@ import { Route } from './router'
 
 Now, you can link to any page like you're used to, just `import { Link } from './router'`!
 
-##Preloading routes
+## Preloading routes
 
 Note: If you use a serice worker, this isn't really needed. Except on older browsers.
 
@@ -76,7 +76,7 @@ export const Home = (
 The route will be loaded in the background :)
 
 
-##Custom loading
+## Custom loading
 
 If you need to do more than just async load a route, you can make your own loader by importing components directly:
 
