@@ -1,7 +1,8 @@
 import loader from './loader';
-import LinkBuilder from '../src/link';
-import RouteBuilder from '../src/route';
-import PreloadBuilder from '../src/preload';
+import LinkBuilder from './link';
+import RouteBuilder from './route';
+import PreloadBuilder from './preload';
+
 window.components = {};
 
 export default (routes, importer) => {
@@ -10,6 +11,6 @@ export default (routes, importer) => {
   return {
     Link: LinkBuilder(Loader),
     Route: RouteBuilder(Loader),
-    Preload: PreloadBuilder(Loader)
+    Preload: PreloadBuilder(Loader),
   };
 };
