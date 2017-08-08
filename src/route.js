@@ -1,8 +1,11 @@
+import React from 'react';
 import { Route } from 'react-router-dom';
+
 class Async extends React.Component {
   constructor({ dataPath }) {
     super();
-    if (window.components[dataPath]) this.state = { ...window.components[dataPath] };
+    if (window.components[dataPath])
+      this.state = { ...window.components[dataPath] };
     else this.state = {};
   }
 
@@ -24,7 +27,7 @@ class Async extends React.Component {
     if (!component) return;
 
     this.setState({
-      component: component.default
+      component: component.default,
     });
   }
 
@@ -36,10 +39,9 @@ class Async extends React.Component {
   }
 }
 
-export default loader =>
-  props => (
-    <Route
-      {...props}
-      render={routeProps => <Async loader={loader} dataPath={props.dataPath} {...routeProps} />}
-    />
-  );
+export default loader => props =>
+  <Route
+    {...props}
+    render={routeProps =>
+      <Async loader={loader} dataPath={props.dataPath} {...routeProps} />}
+  />;

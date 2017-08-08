@@ -1,6 +1,6 @@
 {
   "name": "react-router-async-routing",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "This will be released shortly, please leave me any feedback on twitter!",
   "main": "dist/index.js",
   "directories": {

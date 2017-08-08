@@ -1,9 +1,12 @@
-export default loader => class Preload extends React.Component {
-  componentDidMount() {
-    loader({ path: this.props.path });
-  }
+import React from 'react';
 
-  render() {
-    return null;
-  }
-};
+export default loader =>
+  class Preload extends React.Component {
+    componentDidMount() {
+      loader({ path: this.props.path });
+    }
+
+    render() {
+      return null;
+    }
+  };
