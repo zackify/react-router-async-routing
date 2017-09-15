@@ -20,6 +20,8 @@ export default loader => {
           to={to}
           className={className}
           onClick={e => {
+            if (e.metaKey || e.ctrlKey) return;
+            e.preventDefault();
             this.loadBeforeNavigate();
             if (onClick) onClick();
           }}
